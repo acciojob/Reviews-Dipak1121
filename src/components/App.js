@@ -1,51 +1,44 @@
 import React, {useState} from "react";
 import data from "../Data/data";
-
+import Review from "./Review";
 
 const App = ()=>{
 
-    const [currentReview, setCurrentReview] = useState(data[0]);
+    // const [currentReview, setCurrentReview] = useState(data[0]);
 
-    const [currentId, setCurrentId] = useState(0);
+    // const [currentId, setCurrentId] = useState(0);
 
-    function handlePrevious(){
-        if(currentId == 0){
-            return;
-        }
-        let id = currentId;
-        setCurrentId(currentId-1);
-        setCurrentReview(data[id-1]);
-    }
+    // function handlePrevious(){
+    //     if(currentId == 0){
+    //         return;
+    //     }
+    //     let id = currentId;
+    //     setCurrentId(currentId-1);
+    //     setCurrentReview(data[id-1]);
+    // }
 
-    function handleNext(){
-        if(currentId == 3){
-            return;
-        }
-        let id = currentId;
-        setCurrentId(currentId+1);
-        setCurrentReview(data[id+1]);
-    }
+    // function handleNext(){
+    //     if(currentId == 3){
+    //         return;
+    //     }
+    //     let id = currentId;
+    //     setCurrentId(currentId+1);
+    //     setCurrentReview(data[id+1]);
+    // }
 
 
-    function handleRandom(){
-        setCurrentId(0);
-        setCurrentReview(data[0]);
-    }
+    // function handleRandom(){
+    //     setCurrentId(0);
+    //     setCurrentReview(data[0]);
+    // }
+
     return(
-        <div>
+        <section className="container">
+            <main>
             <h1 id="review-heading">Our Reviews</h1>
-            <div className="review">
-                <h3 className="author" id={currentReview.id}>{currentReview.name}</h3>
-                <h4 className="job">{currentReview.job}</h4>
-                <p className="info">{currentReview.text}</p>
-                <img className="person-img" src={currentReview.image}/>
-            </div>
-            <div>
-                <button className="prev-btn" onClick={handlePrevious}>Previous</button>
-                <button className="next-btn" onClick={handleNext}>Next</button>
-                <button className="random-btn" onClick={handleRandom}>Random Review</button>
-            </div>
-        </div>
+            </main>
+            <Review/>
+        </section>
     )
 }
 
