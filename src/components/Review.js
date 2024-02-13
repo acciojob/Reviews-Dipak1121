@@ -35,13 +35,13 @@ const Review = ()=>{
     return(
        
             <div className="review">
-                <h3 className="author" id={currentReview.id}>{currentReview.name}</h3>
+                <h3 className="author" id={`author-${currentReview.id}`}>{currentReview.name}</h3>
                 <h4 className="job">{currentReview.job}</h4>
                 <p className="info">{currentReview.text}</p>
                 <img className="person-img" src={currentReview.image}/>
                 <button className="prev-btn" onClick={handlePrevious}>Previous</button>
                 <button className="next-btn" onClick={handleNext}>Next</button>
-                <button className="random-btn" onClick={handleRandom}>Random Review</button>
+                <button className="random-btn" onClick={handleRandom}>surprise me</button>
             </div>
             
         
